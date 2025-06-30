@@ -1,14 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strona w budowie</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" />
+
+  <style>
+    body, html {
+      height: 100%;
+    }
+    .full-height {
+      height: 100%;
+    }
+    #icon i {
+      font-size: 3rem;
+    }
+  </style>
 </head>
-<body>
-    HELLO WORLD!!!
+<body class="bg-dark text-white d-flex align-items-center justify-content-center full-height">
+  <div class="text-center px-3">
+    <!-- Nazwa firmy/stowarzyszenia -->
+    <h2 class="fw-semibold mb-4">Chór ALBATESSO</h2>
+
+    <!-- Ikona (losowana) -->
+    <div id="icon" class="mb-3"></div>
+
+    <!-- Komunikat -->
+    <h1 class="display-5 fw-bold mt-2">Strona w budowie</h1>
+    <p class="lead">Pracujemy nad czymś niesamowitym. Wkrótce wracamy!</p>
+
+    <!-- Cytat (losowany) -->
+    <p id="quote" class="fw-lighter fst-italic col-lg-6 mx-auto mt-3"></p>
+
+    <!-- <p id="quote" class="text-muted fs-5 mt-3"></p>  -->
+
+    <!--
+    <p id="quote" class="lead col-lg-6 mx-auto mt-3">
+        <small class="text-muted">
+          Otwórz drzwi niewidzialnych możliwości, które już istnieją — nie tam, gdzie patrzysz, lecz tam, gdzie kierujesz uwagę.
+        </small>
+      </p>
+    -->
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Skrypt losujący ikonę i cytat -->
+  <script>
+    const quotes = [
+      "Budujemy to, co wcześniej odważyliśmy się zobaczyć w myślach.",
+      "Każda zmiana zaczyna się od cichego przekonania, że jest możliwa.",
+      "To, co powstaje na stronie, już istnieje w wyobraźni.",
+      "Nie widzisz jeszcze efektów, ale dzieło już się dzieje.",
+      "Rzeczywistość zawsze dogania wyobrażenie.",
+      "To, co tworzymy, nie zaczyna się od kodu, lecz od wizji.",
+      "Wyobraźnia to fundament każdej budowy — widocznej i niewidocznej.",
+      "Strona rośnie tak, jak rośnie myśl — najpierw w ukryciu."
+    ];
+
+    const icons = [
+      "bi-building",
+      "bi-tools",
+      "bi-cone-striped",
+      "bi-hammer",
+      "bi-bricks",
+      "bi-gear"
+    ];
+
+    // Losowy cytat
+    document.getElementById("quote").textContent =
+      quotes[Math.floor(Math.random() * quotes.length)];
+
+    // Losowa ikona
+    const iconClass = icons[Math.floor(Math.random() * icons.length)];
+    document.getElementById("icon").innerHTML = `<i class="bi ${iconClass}"></i>`;
+  </script>
 </body>
 </html>
+
