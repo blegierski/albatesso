@@ -76,12 +76,16 @@
     ];
 
     // Losowy cytat
-    document.getElementById("quote").textContent =
-      quotes[Math.floor(Math.random() * quotes.length)];
+    const quoteElement = document.getElementById("quote");
+    if (quoteElement) {
+      quoteElement.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+    }
 
     // Losowa ikona
     const iconClass = icons[Math.floor(Math.random() * icons.length)];
-    document.getElementById("icon").innerHTML = `<i class="bi ${iconClass}"></i>`;
+    if (iconClass) {
+      document.getElementById("icon").innerHTML = `<i class="bi ${iconClass}"></i>`;
+    }
   </script>
 </body>
 </html>
