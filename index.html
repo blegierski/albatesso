@@ -1,102 +1,52 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Strona w budowie</title>
-
-  <!-- Font Signika z Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+  <title>Chór Albatesso - Strona w budowie</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" />
+  <!-- Google Fonts - Signika -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
 
-  <!-- Minimalna integracja fontu z Bootstrap -->
   <style>
-    :root {
-      --bs-font-sans-serif: 'Signika', sans-serif;
+    body {
+      font-family: 'Signika', sans-serif;
     }
-
-    body, html {
-      height: 100%;
+    .content-wrapper {
+      /* Dodanie lekkiego cienia do tekstu dla lepszej czytelności */
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
     }
-
-    .full-height {
-      height: 100%;
-    }
-
-    #icon i {
-      font-size: 3rem;
-    }
-
   </style>
 </head>
-<body class="bg-dark text-white d-flex align-items-center justify-content-center full-height">
-  <div class="text-center px-3">
-    <!-- Nazwa firmy/stowarzyszenia -->
-    <h2 class="fw-semibold mb-4">Chór ALBATESSO</h2>
+<body class="d-flex flex-column min-vh-100">
 
-    <!-- Ikona (losowana) -->
-    <div id="icon" class="mb-3"></div>
+  <!-- Główna zawartość strony -->
+  <main class="flex-grow-1 d-flex flex-column justify-content-center align-items-center text-center px-3">
+    <div class="content-wrapper">
+      <h1 class="display-3 fw-bold">Chór ALBATESSO</h1>
+      <p class="lead mt-3 fs-2">Nasza strona jest w przebudowie</p>
+      <p class="mt-2 fs-5 fw-light">Pracujemy nad czymś nowym i ekscytującym. Zapraszamy wkrótce!</p>
+    </div>
+  </main>
 
-    <!-- Komunikat -->
-    <h1 class="display-5 fw-bold mt-2">Strona w przebudowie</h1>
-    <p class="lead">Pracujemy nad czymś niesamowitym. Wkrótce wracamy!</p>
-
-    <!-- Cytat (losowany)
-    <p id="quote" class="fw-lighter fst-italic col-lg-6 mx-auto mt-3"></p> -->
-
-    <!-- <p id="quote" class="text-muted fs-5 mt-3"></p>  -->
-
-    <!--
-    <p id="quote" class="lead col-lg-6 mx-auto mt-3">
-        <small class="text-muted">
-          Otwórz drzwi niewidzialnych możliwości, które już istnieją — nie tam, gdzie patrzysz, lecz tam, gdzie kierujesz uwagę.
-        </small>
-      </p>
-    -->
-
-  </div>
+  <!-- Stopka -->
+  <footer class="py-3 mt-auto text-center fw-light">
+    <div class="container">
+      &copy; <span id="year"></span> Chór Albatesso. Wszelkie prawa zastrzeżone.
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-  <!-- Skrypt losujący ikonę i cytat -->
+  <!-- Skrypt do aktualizacji roku -->
   <script>
-    const quotes = [
-      "Budujemy to, co wcześniej odważyliśmy się zobaczyć w myślach.",
-      "Każda zmiana zaczyna się od cichego przekonania, że jest możliwa.",
-      "To, co powstaje na stronie, już istnieje w wyobraźni.",
-      "Nie widzisz jeszcze efektów, ale dzieło już się dzieje.",
-      "Rzeczywistość zawsze dogania wyobrażenie.",
-      "To, co tworzymy, nie zaczyna się od kodu, lecz od wizji.",
-      "Wyobraźnia to fundament każdej budowy — widocznej i niewidocznej.",
-      "Strona rośnie tak, jak rośnie myśl — najpierw w ukryciu."
-    ];
-
-    const icons = [
-      "bi-building",
-      "bi-tools",
-      "bi-cone-striped",
-      "bi-hammer",
-      "bi-bricks",
-      "bi-gear"
-    ];
-
-    // Losowy cytat
-    const quoteElement = document.getElementById("quote");
-    if (quoteElement) {
-      quoteElement.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-    }
-
-    // Losowa ikona
-    const iconClass = icons[Math.floor(Math.random() * icons.length)];
-    if (iconClass) {
-      document.getElementById("icon").innerHTML = `<i class="bi ${iconClass}"></i>`;
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
